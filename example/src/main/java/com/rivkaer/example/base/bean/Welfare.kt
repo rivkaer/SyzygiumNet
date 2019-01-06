@@ -1,4 +1,4 @@
-package com.rivkaer.example.bean
+package com.rivkaer.example.base.bean
 
 data class Welfare(
     val _id: String,

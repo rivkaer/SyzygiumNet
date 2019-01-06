@@ -1,4 +1,4 @@
-package com.rivkaer.example.bean
+package com.rivkaer.example.base.bean
 
 enum class Types(val typeVal: String) {
     WELFARE("福利"),

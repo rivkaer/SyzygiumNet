@@ -1,6 +1,6 @@
 package com.rivkaer.example.net
 
-import com.rivkaer.example.bean.Welfare
+import com.rivkaer.example.base.bean.Welfare
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

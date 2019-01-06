@@ -2,16 +2,11 @@ package com.rivkaer.example
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
-import com.rivkaer.example.bean.Types
-import com.rivkaer.example.bean.Welfare
-import com.rivkaer.example.net.GankioRetrofit
-import com.rivkaer.moonnet.Callback.CustCallback
 
 import org.junit.Test
 import org.junit.runner.RunWith
 
 import org.junit.Assert.*
-import retrofit2.Call
 
 /**
  * Instrumented test, which will execute on an Android device.
