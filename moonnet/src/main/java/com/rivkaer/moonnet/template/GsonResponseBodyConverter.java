@@ -31,17 +31,10 @@ final class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
         Type baseBaseBean = $Gson$Types.newParameterizedTypeWithOwner(null, BaseBean.class, type);
         BaseBean bean = gson.fromJson(response, baseBaseBean);
 
-        if (bean.getCode() != NetworkConfig.RESP_CODE_SUCCESS){
-            switch (bean.getCode()){
-                case NetworkConfig.RESP_CODE_FAILURE:
-                    throw new ResultException(bean.getCode(),bean.getMsg());
-                case NetworkConfig.RESP_CODE_TOKEN:
-                    throw new ApiException(bean.getCode(),bean.getMsg());
-                default:
-                    throw new ResultException(bean.getCode(),bean.getMsg());
-            }
+        if (bean.isError()){
+            throw new ResultException(901,"服务器异常");
         }else {
-            return (T) bean.getData();
+            return (T) bean.getResults();
         }
     }
 }
