@@ -1,4 +1,4 @@
-package com.rivkaer.moonnet
+package com.rivkaer.example
 
 import org.junit.Test
 

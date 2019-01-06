@@ -1,4 +1,4 @@
-package com.rivkaer.moonnet
+package com.rivkaer.example
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
