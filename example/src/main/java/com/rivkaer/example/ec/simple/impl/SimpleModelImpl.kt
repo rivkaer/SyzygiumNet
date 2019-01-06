@@ -11,7 +11,7 @@ import retrofit2.Call
 class SimpleModelImpl : ISimpleContract.ISimpleModel {
 
     override fun rquestGankio(type: String, size: Int, pager: Int, callBack: IBaseModel.ICallback<List<Welfare>>) {
-        GankioRetrofit.Gankio().girls(Types.WELFARE.typeVal, 10, 1).enqueue(object : CustCallback<List<Welfare>>() {
+        GankioRetrofit.Gankio().girls(Types.WELFARE.typeVal, size, pager).enqueue(object : CustCallback<List<Welfare>>() {
             override fun onFailure(failureCode: Int, msg: String?, call: Call<List<Welfare>>?) {
                 callBack.error(code = failureCode, error = "$msg")
             }
