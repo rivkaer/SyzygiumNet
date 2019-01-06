@@ -23,4 +23,8 @@ class StaggerGirlsAdapter(layoutResId: Int, data: List<Welfare>) :
 
         Glide.with(mContext).load(item!!.url).apply(options).into(img)
     }
+
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
 }

@@ -23,6 +23,7 @@ class SimpleExampleActivity : AppCompatActivity(), ISimpleContract.ISimpleView {
 
         adapter = StaggerGirlsAdapter(R.layout.adapter_simple_girls, data)
         adapter!!.setEnableLoadMore(true)
+        adapter!!.setHasStableIds(true)
 
         val manager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         manager.gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_NONE
