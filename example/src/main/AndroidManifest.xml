@@ -20,7 +20,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ec.simple.SimpleExampleActivity" />
     </application>
 
 </manifest>
