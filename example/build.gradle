@@ -5,15 +5,17 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion rootProject.ext.android['compileSdkVersion']
+
     defaultConfig {
         applicationId "com.rivkaer.moonnet"
-        minSdkVersion 18
-        targetSdkVersion 28
+        minSdkVersion rootProject.ext.android['minSdkVersion']
+        targetSdkVersion rootProject.ext.android['targetSdkVersion']
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
