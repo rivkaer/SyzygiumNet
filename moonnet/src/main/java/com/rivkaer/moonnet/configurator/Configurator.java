@@ -40,38 +40,32 @@ public final class Configurator {
         return this;
     }
 
-    /* 是否自动在头部追加Token */
     public final Configurator withAttachHeaderToken(boolean isAttachToken) {
         MOON_CONFIGS.put(ConfigType.ATTACH_TOKEN, isAttachToken);
         return this;
     }
 
-    /* 自动追加Token时的数据 */
     public final Configurator withAttachHeaderToken(String token) {
         MOON_CONFIGS.put(ConfigType.TOKEN, token);
         return this;
     }
 
-    /* 是否自动在头部追加Token */
     public final Configurator withAttachHeaderToken(boolean isAttachToken, String token) {
         MOON_CONFIGS.put(ConfigType.ATTACH_TOKEN, isAttachToken);
         MOON_CONFIGS.put(ConfigType.TOKEN, token);
         return this;
     }
 
-    /* 是否自动在头部追加Cookie */
     public final Configurator withAttachHeaderCookie(boolean isAttachCookie) {
         MOON_CONFIGS.put(ConfigType.ATTACH_COOKIE, isAttachCookie);
         return this;
     }
 
-    /* 自动追加Cookie时的数据 */
     public final Configurator withAttachHeaderCookie(Set<String> cookie) {
         MOON_CONFIGS.put(ConfigType.COOKIE, cookie);
         return this;
     }
 
-    /* 是否自动在头部追加Token */
     public final Configurator withAttachHeaderCookie(boolean isAttachCookie, Set<String> cookie) {
         MOON_CONFIGS.put(ConfigType.ATTACH_COOKIE, isAttachCookie);
         MOON_CONFIGS.put(ConfigType.COOKIE, cookie);
