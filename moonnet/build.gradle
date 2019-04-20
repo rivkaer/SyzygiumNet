@@ -32,4 +32,6 @@ dependencies {
     api rootProject.ext.dependencies['okhttp3']
     api rootProject.ext.dependencies['okhttplogger']
     api rootProject.ext.dependencies['retrofit2']
+
+    api rootProject.ext.dependencies['gson']
 }
