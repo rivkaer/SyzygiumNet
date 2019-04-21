@@ -1,17 +1,13 @@
 package com.rivkaer.moonnet.okhttp;
 
 import com.rivkaer.moonnet.MoonNet;
-import com.rivkaer.moonnet.helper.MoonStorageHelper;
+import com.rivkaer.moonnet.helper.IMoonCoookieStorage;
 import com.rivkaer.moonnet.intercept.AddCookiesInterceptor;
 import com.rivkaer.moonnet.intercept.ReceivedCookiesInterceptor;
 import com.rivkaer.moonnet.logger.MoonLogger;
 
-import okhttp3.Cookie;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
-
-import java.util.List;
 
 /**
  * @author: Junjian Jia
@@ -30,7 +26,7 @@ public class OKHttpManager {
             builder.addInterceptor(new HttpLoggingInterceptor(new MoonLogger()).setLevel(HttpLoggingInterceptor.Level.BODY));
         }
 
-        MoonStorageHelper cookieWareHouse = MoonNet.getCookieWareHouse();
+        IMoonCoookieStorage cookieWareHouse = MoonNet.getCookieWareHouse();
         if (null != cookieWareHouse) {
             builder.addInterceptor(new AddCookiesInterceptor(cookieWareHouse));
             builder.addInterceptor(new ReceivedCookiesInterceptor(cookieWareHouse));

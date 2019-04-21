@@ -8,7 +8,7 @@ import java.util.Set;
  * @Email: cnrivkaer@outlook.com
  * @Description: 网络库储存接口
  */
-public interface MoonStorageHelper {
+public interface IMoonCoookieStorage {
 
     public String NAME_SAVE_COOKIE = "MoonCookie";
 

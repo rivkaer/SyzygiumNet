@@ -1,7 +1,7 @@
 package com.rivkaer.moonnet;
 
 import com.rivkaer.moonnet.configurator.Configurator;
-import com.rivkaer.moonnet.helper.MoonStorageHelper;
+import com.rivkaer.moonnet.helper.IMoonCoookieStorage;
 
 import java.util.WeakHashMap;
 
@@ -39,7 +39,7 @@ public class MoonNet {
     }
 
     /* 获取Cookie储存仓库 */
-    public static MoonStorageHelper getCookieWareHouse() {
+    public static IMoonCoookieStorage getCookieWareHouse() {
         if (!getConfiguations().keySet().contains(Configurator.ConfigType.MOON_STORAGE)) {
             return null;
         }

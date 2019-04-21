@@ -1,6 +1,6 @@
 package com.rivkaer.moonnet.intercept;
 
-import com.rivkaer.moonnet.helper.MoonStorageHelper;
+import com.rivkaer.moonnet.helper.IMoonCoookieStorage;
 import okhttp3.Interceptor;
 import okhttp3.Response;
 
@@ -16,16 +16,16 @@ import java.util.Set;
  */
 public class ReceivedCookiesInterceptor implements Interceptor {
 
-    private MoonStorageHelper mWareHose;
+    private IMoonCoookieStorage mWareHose;
 
     public ReceivedCookiesInterceptor() {
     }
 
-    public ReceivedCookiesInterceptor(MoonStorageHelper wareHose) {
+    public ReceivedCookiesInterceptor(IMoonCoookieStorage wareHose) {
         this.mWareHose = wareHose;
     }
 
-    public void setmWareHose(MoonStorageHelper mWareHose) {
+    public void setmWareHose(IMoonCoookieStorage mWareHose) {
         this.mWareHose = mWareHose;
     }
 
@@ -41,7 +41,9 @@ public class ReceivedCookiesInterceptor implements Interceptor {
                 cookies.add(header);
             }
 
-            mWareHose.saveCookie(mWareHose.NAME_SAVE_COOKIE, cookies);
+            if (null != mWareHose) {
+                mWareHose.saveCookie(mWareHose.NAME_SAVE_COOKIE, cookies);
+            }
         }
 
         return originalResponse;

@@ -1,6 +1,6 @@
 package com.rivkaer.moonnet.intercept;
 
-import com.rivkaer.moonnet.helper.MoonStorageHelper;
+import com.rivkaer.moonnet.helper.IMoonCoookieStorage;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -16,16 +16,16 @@ import java.util.Set;
  */
 public class AddCookiesInterceptor implements Interceptor {
 
-    private MoonStorageHelper mWareHose;
+    private IMoonCoookieStorage mWareHose;
 
     public AddCookiesInterceptor() {
     }
 
-    public AddCookiesInterceptor(MoonStorageHelper wareHose) {
+    public AddCookiesInterceptor(IMoonCoookieStorage wareHose) {
         this.mWareHose = wareHose;
     }
 
-    public void setmWareHose(MoonStorageHelper mWareHose) {
+    public void setmWareHose(IMoonCoookieStorage mWareHose) {
         this.mWareHose = mWareHose;
     }
 
