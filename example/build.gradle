@@ -32,6 +32,8 @@ dependencies {
     implementation rootProject.ext.dependencies['design']
     implementation rootProject.ext.dependencies['constraint']
 
+    implementation 'com.tencent:mmkv:1.0.18'
+
     implementation project(":moonnet")
     implementation project(":moonnet-kotlin")
 }
