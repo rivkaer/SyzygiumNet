@@ -36,5 +36,4 @@ public final class RetrofitManager {
     private Retrofit retrofit() {
         return mRetrofit;
     }
-
 }

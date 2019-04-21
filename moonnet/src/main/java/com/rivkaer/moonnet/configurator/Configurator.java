@@ -1,6 +1,7 @@
 package com.rivkaer.moonnet.configurator;
 
-import java.util.Set;
+import com.rivkaer.moonnet.helper.MoonStorageHelper;
+
 import java.util.WeakHashMap;
 
 /**
@@ -40,35 +41,8 @@ public final class Configurator {
         return this;
     }
 
-    public final Configurator withAttachHeaderToken(boolean isAttachToken) {
-        MOON_CONFIGS.put(ConfigType.ATTACH_TOKEN, isAttachToken);
-        return this;
-    }
-
-    public final Configurator withAttachHeaderToken(String token) {
-        MOON_CONFIGS.put(ConfigType.TOKEN, token);
-        return this;
-    }
-
-    public final Configurator withAttachHeaderToken(boolean isAttachToken, String token) {
-        MOON_CONFIGS.put(ConfigType.ATTACH_TOKEN, isAttachToken);
-        MOON_CONFIGS.put(ConfigType.TOKEN, token);
-        return this;
-    }
-
-    public final Configurator withAttachHeaderCookie(boolean isAttachCookie) {
-        MOON_CONFIGS.put(ConfigType.ATTACH_COOKIE, isAttachCookie);
-        return this;
-    }
-
-    public final Configurator withAttachHeaderCookie(Set<String> cookie) {
-        MOON_CONFIGS.put(ConfigType.COOKIE, cookie);
-        return this;
-    }
-
-    public final Configurator withAttachHeaderCookie(boolean isAttachCookie, Set<String> cookie) {
-        MOON_CONFIGS.put(ConfigType.ATTACH_COOKIE, isAttachCookie);
-        MOON_CONFIGS.put(ConfigType.COOKIE, cookie);
+    public final Configurator withCookieWareHouse(MoonStorageHelper helper) {
+        MOON_CONFIGS.put(ConfigType.MOON_STORAGE, helper);
         return this;
     }
 
@@ -111,9 +85,6 @@ public final class Configurator {
         public static final String API_HOST = "API_HOST";
         public static final String DEBUG_HOST = "DEBUG_HOST";
         public static final String CONFIG_READY = "CONFIG_READY";
-        public static final String ATTACH_TOKEN = "ATTACH_TOKEN";
-        public static final String TOKEN = "TOKEN";
-        public static final String ATTACH_COOKIE = "ATTACH_COOKIE";
-        public static final String COOKIE = "COOKIE";
+        public static final String MOON_STORAGE = "MOON_STORAGE";
     }
 }
