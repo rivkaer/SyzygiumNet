@@ -33,7 +33,7 @@ public final class RetrofitManager {
         static RetrofitManager instance = new RetrofitManager();
     }
 
-    private Retrofit retrofit() {
+    public Retrofit retrofit() {
         return mRetrofit;
     }
 }
