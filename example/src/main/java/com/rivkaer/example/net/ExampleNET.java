@@ -1,8 +1,8 @@
 package com.rivkaer.example.net;
 
 import com.rivkaer.moonnet.retrofit.RetrofitManager;
+import com.rivkaer.moonnet.rx.DefaultObservable;
 
-import io.reactivex.Observable;
 import retrofit2.http.POST;
 
 /**
@@ -25,7 +25,7 @@ public class ExampleNET {
     interface ExampleApi {
 
         @POST(value = "/")
-        Observable<String> test();
+        DefaultObservable<String> test();
 
     }
 }
