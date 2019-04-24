@@ -16,12 +16,38 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file("/home/keys/rivkaer/rivkaer.jks")
+            storePassword "147258"
+            keyAlias "android"
+            keyPassword "147258"
+        }
+
+        debug {
+            storeFile file("debug.jks")
+            storePassword "147258"
+            keyAlias "android"
+            keyPassword "147258"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            zipAlignEnabled true
+            shrinkResources false
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            signingConfig signingConfigs.debug
         }
     }
+
+
 }
 
 dependencies {
