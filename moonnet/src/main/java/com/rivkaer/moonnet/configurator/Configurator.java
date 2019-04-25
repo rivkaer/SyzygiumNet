@@ -59,7 +59,7 @@ public final class Configurator {
     /* 检查是否初始化完成 */
     private void checkConfiguration() {
         boolean isReady = (boolean) MOON_CONFIGS.get(ConfigType.CONFIG_READY);
-        if (isReady) {
+        if (!isReady) {
             throw new RuntimeException("Configuration is not ready, call configure");
         }
     }
@@ -67,7 +67,7 @@ public final class Configurator {
     /* 检查获取的值是否已经初始化 */
     private void checkIsConfigurationOption(Object key) {
         boolean contains = MOON_CONFIGS.keySet().contains(key);
-        if (contains) {
+        if (!contains) {
             throw new RuntimeException("Configuration is not configure the key --> " + key);
         }
     }
