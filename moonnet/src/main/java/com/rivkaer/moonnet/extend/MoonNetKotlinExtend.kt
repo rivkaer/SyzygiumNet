@@ -13,8 +13,7 @@ import io.reactivex.schedulers.Schedulers
  * @Description: moonnet 简化拓展
  */
 fun <T> Observable<T>.defaultSetting(): Observable<T> {
-    return this
-        .subscribeOn(Schedulers.io())
+    return this.subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
 }
 

@@ -1,9 +1,9 @@
 package com.rivkaer.moonnet.retrofit;
 
-import com.rivkaer.moonnet.convert.GsonConverterFactory;
 import com.rivkaer.moonnet.okhttp.OKHttpManager;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * @author: Rivkaer Jia

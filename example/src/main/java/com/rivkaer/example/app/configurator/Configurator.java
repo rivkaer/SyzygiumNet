@@ -41,11 +41,6 @@ public final class Configurator {
         return this;
     }
 
-    public final Configurator withCookieWareHouse(IMoonCoookieStorage helper) {
-        MOON_CONFIGS.put(ConfigType.MOON_STORAGE, helper);
-        return this;
-    }
-
     /* 初始化完成 */
     public final void configurator() {
         MOON_CONFIGS.put(ConfigType.CONFIG_READY, true);

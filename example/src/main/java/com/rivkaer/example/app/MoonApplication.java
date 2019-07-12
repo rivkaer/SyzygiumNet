@@ -22,10 +22,8 @@ public class MoonApplication extends Application {
 
     private void initMoonNet() {
         MoonNet.init()
-                .withApiHost("http://api.vnis.top")
-                .withDebugHost("http://test.vnis.top")
+                .withApiHost("http://192.168.2.103:8061/") //http://net.novakj.cn
                 .withDebug(true)
-                .withCookieWareHouse(new CookieStorage())
                 .configurator();
     }
 }

@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.AppCompatImageView
-        android:id="@+id/iv_simple"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:background="@color/colorPrimary"/>
-
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/btn_simple"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/view_content_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/simple"/>
+        android:layout_height="match_parent"
+        android:overScrollMode="never"/>
 
 </android.support.v7.widget.LinearLayoutCompat>

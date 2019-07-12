@@ -1,1 +1,1 @@
-include ':example', ':moonnet'
+include ':example', ':moonnet', ':moonlib'

@@ -33,14 +33,6 @@ public class MoonNet {
         return getConfiguration(Configurator.ConfigType.API_HOST);
     }
 
-    /* 获取Cookie储存仓库 */
-    public static IMoonCoookieStorage getCookieWareHouse() {
-        if (!getConfiguations().keySet().contains(Configurator.ConfigType.MOON_STORAGE)) {
-            return null;
-        }
-        return getConfiguration(Configurator.ConfigType.MOON_STORAGE);
-    }
-
     private static <T> T getConfiguration(Object key) {
         return Configurator.getInstance().getConfiguration(key);
     }

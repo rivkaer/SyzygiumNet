@@ -61,6 +61,11 @@ dependencies {
     implementation 'com.tencent:mmkv:1.0.18'
 
     implementation project(":moonnet")
+    implementation project(":moonlib")
+
+    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
+//    kapt 'com.github.bumptech.glide:compiler:4.5.0'
 
     implementation rootProject.ext.dependencies['kotlin']
 }

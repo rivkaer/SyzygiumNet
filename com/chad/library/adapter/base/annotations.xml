@@ -1,0 +1,5 @@
+<root>
+    <item name='com.chad.library.adapter.base.BaseQuickAdapter'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>
