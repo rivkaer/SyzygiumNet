@@ -1,4 +1,4 @@
-package com.rivkaer.moonnet.configurator;
+package com.rivkaer.example.app.configurator;
 
 import com.rivkaer.moonnet.helper.IMoonCoookieStorage;
 

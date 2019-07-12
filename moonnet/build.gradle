@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion rootProject.ext.android['compileSdkVersion']
@@ -25,6 +26,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    implementation rootProject.ext.dependencies['appcompat-v7']
+
+    implementation rootProject.ext.dependencies['kotlin']
+
     api rootProject.ext.dependencies['rxjava']
     api rootProject.ext.dependencies['rxandroid']
     implementation rootProject.ext.dependencies['rxadapter']
@@ -34,4 +39,6 @@ dependencies {
     api rootProject.ext.dependencies['retrofit2']
 
     api rootProject.ext.dependencies['gson']
+
+    api 'com.wang.avi:library:2.1.3'
 }

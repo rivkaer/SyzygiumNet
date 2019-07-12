@@ -2,7 +2,6 @@ package com.rivkaer.example.app;
 
 import android.app.Application;
 import com.rivkaer.example.helper.CookieStorage;
-import com.rivkaer.moonnet.MoonNet;
 import com.tencent.mmkv.MMKV;
 
 /**

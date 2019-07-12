@@ -1,6 +1,5 @@
 package com.rivkaer.moonnet.retrofit;
 
-import com.rivkaer.moonnet.MoonNet;
 import com.rivkaer.moonnet.convert.GsonConverterFactory;
 import com.rivkaer.moonnet.okhttp.OKHttpManager;
 import retrofit2.Retrofit;
@@ -17,12 +16,6 @@ public final class RetrofitManager {
     private static Retrofit mRetrofit;
 
     private RetrofitManager() {
-        Retrofit.Builder builder = new Retrofit.Builder();
-        builder.baseUrl(MoonNet.isDebug() ? MoonNet.getDebugHost() : MoonNet.getApiHost());
-        builder.addConverterFactory(GsonConverterFactory.create());
-        builder.addCallAdapterFactory(RxJava2CallAdapterFactory.create());
-        builder.client(OKHttpManager.getInstance().getHttpClick());
-        mRetrofit = builder.build();
     }
 
     public static RetrofitManager getInstance() {
@@ -33,7 +26,15 @@ public final class RetrofitManager {
         static RetrofitManager instance = new RetrofitManager();
     }
 
-    public Retrofit retrofit() {
+    public Retrofit newRetrofit(String url, boolean isDebug) {
+        if (mRetrofit == null) {
+            Retrofit.Builder builder = new Retrofit.Builder();
+            builder.baseUrl(url);
+            builder.addConverterFactory(GsonConverterFactory.create());
+            builder.addCallAdapterFactory(RxJava2CallAdapterFactory.create());
+            builder.client(OKHttpManager.getInstance().getHttpClick(isDebug));
+            mRetrofit = builder.build();
+        }
         return mRetrofit;
     }
 }

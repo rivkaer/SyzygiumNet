@@ -1,13 +1,8 @@
 package com.rivkaer.example.net;
 
+import com.rivkaer.example.app.MoonNet;
+import com.rivkaer.example.net.service.ExampleService;
 import com.rivkaer.moonnet.retrofit.RetrofitManager;
-import com.rivkaer.moonnet.rx.DefaultObservable;
-
-import io.reactivex.Observable;
-import okhttp3.ResponseBody;
-import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.Url;
 
 /**
  * @author: Rivkaer Jia
@@ -17,22 +12,12 @@ import retrofit2.http.Url;
  */
 public class ExampleNET {
 
-    private static ExampleApi exampleApi() {
-        return RetrofitManager.getInstance().retrofit().create(ExampleApi.class);
+    private static ExampleService exampleApi() {
+        return RetrofitManager.getInstance().newRetrofit(MoonNet.getApiHost(), MoonNet.isDebug()).create(ExampleService.class);
     }
 
     /* 测试Api */
-    public static ExampleApi exampleNet() {
+    public static ExampleService exampleNet() {
         return exampleApi();
-    }
-
-    public interface ExampleApi {
-
-        @POST(value = "/")
-        DefaultObservable<String> test();
-
-        @GET
-        Observable<ResponseBody> urlImage(@Url String imageUrl);
-
     }
 }

@@ -42,7 +42,7 @@ ext {
             "cardview"    : "com.android.support:cardview-v7:${dependVersion.androidSupport}",
             "recyclerview": "com.android.support:recyclerview-v7:${dependVersion.androidSupport}",
             "anko-commons": "org.jetbrains.anko:anko-commons:${dependVersion.anko}",
-            "kotlin"      : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${android.kotlin}",
+            "kotlin"      : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${android.kotlin}",
             "retrofit2"   : "com.squareup.retrofit2:retrofit:${dependVersion.retrofit2}",
             "okhttp3"     : "com.squareup.okhttp3:okhttp:${dependVersion.okhttp3}",
             "okhttplogger": "com.squareup.okhttp3:logging-interceptor:${dependVersion.okhttp3}",

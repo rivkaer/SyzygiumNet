@@ -1,9 +1,5 @@
 package com.rivkaer.moonnet.okhttp;
 
-import com.rivkaer.moonnet.MoonNet;
-import com.rivkaer.moonnet.helper.IMoonCoookieStorage;
-import com.rivkaer.moonnet.intercept.AddCookiesInterceptor;
-import com.rivkaer.moonnet.intercept.ReceivedCookiesInterceptor;
 import com.rivkaer.moonnet.logger.MoonLogger;
 
 import okhttp3.OkHttpClient;
@@ -20,21 +16,7 @@ public class OKHttpManager {
     private static OkHttpClient mOkHttpClick;
 
     private OKHttpManager() {
-        OkHttpClient.Builder builder = new OkHttpClient.Builder();
 
-        if (MoonNet.isDebug()) {
-            builder.addInterceptor(new HttpLoggingInterceptor(new MoonLogger()).setLevel(HttpLoggingInterceptor.Level.BODY));
-        }
-
-        IMoonCoookieStorage cookieWareHouse = MoonNet.getCookieWareHouse();
-        if (null != cookieWareHouse) {
-            builder.addInterceptor(new AddCookiesInterceptor(cookieWareHouse));
-            builder.addInterceptor(new ReceivedCookiesInterceptor(cookieWareHouse));
-        }
-
-        builder.followRedirects(true);
-
-        mOkHttpClick = builder.build();
     }
 
     public static OKHttpManager getInstance() {
@@ -45,7 +27,20 @@ public class OKHttpManager {
         static final OKHttpManager instance = new OKHttpManager();
     }
 
-    public OkHttpClient getHttpClick() {
+    public OkHttpClient getHttpClick(boolean isDebug) {
+        if (mOkHttpClick == null) {
+            OkHttpClient.Builder builder = new OkHttpClient.Builder();
+            if (isDebug) {
+                builder.addInterceptor(new HttpLoggingInterceptor(new MoonLogger()).setLevel(HttpLoggingInterceptor.Level.BODY));
+            }
+//        IMoonCoookieStorage cookieWareHouse = MoonNet.getCookieWareHouse();
+//        if (null != cookieWareHouse) {
+//            builder.addInterceptor(new AddCookiesInterceptor(cookieWareHouse));
+//            builder.addInterceptor(new ReceivedCookiesInterceptor(cookieWareHouse));
+//        }
+            builder.followRedirects(true);
+            mOkHttpClick = builder.build();
+        }
         return mOkHttpClick;
     }
 }

@@ -1,1 +1,1 @@
-include ':example', ':moonnet', ':moonnet-kotlin'
+include ':example', ':moonnet'

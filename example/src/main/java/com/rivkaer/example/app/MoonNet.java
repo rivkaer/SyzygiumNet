@@ -1,6 +1,6 @@
-package com.rivkaer.moonnet;
+package com.rivkaer.example.app;
 
-import com.rivkaer.moonnet.configurator.Configurator;
+import com.rivkaer.example.app.configurator.Configurator;
 import com.rivkaer.moonnet.helper.IMoonCoookieStorage;
 
 import java.util.WeakHashMap;
@@ -31,11 +31,6 @@ public class MoonNet {
     /* 初始化Release主机域名 */
     public static String getApiHost() {
         return getConfiguration(Configurator.ConfigType.API_HOST);
-    }
-
-    /* 初始化Debug主机域名 */
-    public static String getDebugHost() {
-        return getConfiguration(Configurator.ConfigType.DEBUG_HOST);
     }
 
     /* 获取Cookie储存仓库 */
