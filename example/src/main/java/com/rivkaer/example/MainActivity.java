@@ -9,7 +9,7 @@ import android.view.View;
 import butterknife.BindView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.rivkaer.moonlib.base.BaseActivity;
+import com.rivkaer.example.base.BaseActivity;
 
 import java.util.Arrays;
 import java.util.List;

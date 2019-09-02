@@ -7,7 +7,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.rivkaer.example.models.net.Movie
 import com.rivkaer.example.net.ExampleNET
-import com.rivkaer.moonlib.base.BaseActivity
+import com.rivkaer.example.base.BaseActivity
 import com.rivkaer.moonnet.extend.defaultSetting
 import com.rivkaer.moonnet.model.BaseResultBean
 import io.reactivex.functions.Action

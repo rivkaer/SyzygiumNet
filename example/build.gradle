@@ -60,12 +60,17 @@ dependencies {
 
     implementation 'com.tencent:mmkv:1.0.18'
 
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-31'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-31'
+    implementation 'com.jakewharton:butterknife:9.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.5.0'
+
     implementation project(":moonnet")
-    implementation project(":moonlib")
 
     annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
-//    kapt 'com.github.bumptech.glide:compiler:4.5.0'
 
     implementation rootProject.ext.dependencies['kotlin']
 }

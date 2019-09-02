@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-                android:textSize="@dimen/sp_12"/>
+                android:textSize="12dp"/>
 
     </android.support.v7.widget.CardView>
 

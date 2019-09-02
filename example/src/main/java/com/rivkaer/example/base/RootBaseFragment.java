@@ -1,4 +1,4 @@
-package com.rivkaer.moonlib.base;
+package com.rivkaer.example.base;
 
 import android.app.Activity;
 import android.content.Context;
