@@ -10,9 +10,9 @@ import okhttp3.logging.HttpLoggingInterceptor;
  * @Email: cnrivkaer@outlook.com
  * @Description: 重写Logger接口格式化Log
  */
-public class MoonLogger implements HttpLoggingInterceptor.Logger {
+public class CustomNetworkLogger implements HttpLoggingInterceptor.Logger {
 
-    private static final String TAG_LOGGER = "MoonNet - LOG";
+    private static final String TAG_LOGGER = "CustomNetworkLogger_LOG";
 
     @Override
     public void log(String message) {

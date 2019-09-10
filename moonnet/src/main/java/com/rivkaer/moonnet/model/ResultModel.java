@@ -1,22 +1,23 @@
 package com.rivkaer.moonnet.model;
 
-/**
- * @author: Junjian Jia
- * @Date: 19-4-20
- * @Email: cnrivkaer@outlook.com
- * @Description: 基础的结果的最外层
- */
-public class BaseResultBean<T> {
+import com.alibaba.fastjson.annotation.JSONCreator;
+import com.alibaba.fastjson.annotation.JSONField;
+import com.alibaba.fastjson.annotation.JSONType;
 
-    private int code;
+public class ResultModel<T> {
+
+    @JSONField(name = "code")
+    private Integer code;
+    @JSONField(name = "msg")
     private String msg;
+    @JSONField(name = "data")
     private T data;
 
-    public int getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 

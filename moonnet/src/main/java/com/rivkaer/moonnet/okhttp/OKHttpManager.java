@@ -1,6 +1,6 @@
 package com.rivkaer.moonnet.okhttp;
 
-import com.rivkaer.moonnet.logger.MoonLogger;
+import com.rivkaer.moonnet.logger.CustomNetworkLogger;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -31,13 +31,8 @@ public class OKHttpManager {
         if (mOkHttpClick == null) {
             OkHttpClient.Builder builder = new OkHttpClient.Builder();
             if (isDebug) {
-                builder.addInterceptor(new HttpLoggingInterceptor(new MoonLogger()).setLevel(HttpLoggingInterceptor.Level.BODY));
+                builder.addInterceptor(new HttpLoggingInterceptor(new CustomNetworkLogger()).setLevel(HttpLoggingInterceptor.Level.BODY));
             }
-//        IMoonCoookieStorage cookieWareHouse = MoonNet.getCookieWareHouse();
-//        if (null != cookieWareHouse) {
-//            builder.addInterceptor(new AddCookiesInterceptor(cookieWareHouse));
-//            builder.addInterceptor(new ReceivedCookiesInterceptor(cookieWareHouse));
-//        }
             builder.followRedirects(true);
             mOkHttpClick = builder.build();
         }

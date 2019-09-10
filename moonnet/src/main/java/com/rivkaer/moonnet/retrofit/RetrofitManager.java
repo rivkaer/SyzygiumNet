@@ -1,9 +1,9 @@
 package com.rivkaer.moonnet.retrofit;
 
+import com.rivkaer.moonnet.converter.fastjson.FastJsonConverterFactory;
 import com.rivkaer.moonnet.okhttp.OKHttpManager;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * @author: Rivkaer Jia
@@ -30,7 +30,7 @@ public final class RetrofitManager {
         if (mRetrofit == null) {
             Retrofit.Builder builder = new Retrofit.Builder();
             builder.baseUrl(url);
-            builder.addConverterFactory(GsonConverterFactory.create());
+            builder.addConverterFactory(FastJsonConverterFactory.create());
             builder.addCallAdapterFactory(RxJava2CallAdapterFactory.create());
             builder.client(OKHttpManager.getInstance().getHttpClick(isDebug));
             mRetrofit = builder.build();

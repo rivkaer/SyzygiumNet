@@ -38,8 +38,7 @@ dependencies {
     api rootProject.ext.dependencies['okhttplogger']
     api rootProject.ext.dependencies['retrofit2']
 
-    api 'com.squareup.retrofit2:converter-gson:2.0.2'
-    api rootProject.ext.dependencies['gson']
+    api rootProject.ext.dependencies['fastjson']
 
     api 'com.wang.avi:library:2.1.3'
 }
