@@ -1,17 +1,15 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion rootProject.ext.android['compileSdkVersion']
+    compileSdkVersion 29
 
     defaultConfig {
         applicationId "com.rivkaer.moonnet"
-        minSdkVersion rootProject.ext.android['minSdkVersion']
-        targetSdkVersion rootProject.ext.android['targetSdkVersion']
+        minSdkVersion 19
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
@@ -53,24 +51,12 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation rootProject.ext.dependencies['appcompat-v7']
-    implementation rootProject.ext.dependencies['support-v4']
-    implementation rootProject.ext.dependencies['design']
-    implementation rootProject.ext.dependencies['constraint']
+    implementation 'androidx.appcompat:appcompat:1.1.0'
 
-    implementation 'com.tencent:mmkv:1.0.18'
-
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
-
-    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-31'
-    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-31'
-    implementation 'com.jakewharton:butterknife:9.0.0'
-    implementation 'com.github.bumptech.glide:glide:4.5.0'
-
-    implementation project(":moonnet")
-
-    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
-
-    implementation rootProject.ext.dependencies['kotlin']
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.squareup.okio:okio:2.4.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation 'com.alibaba:fastjson:1.1.71.android'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
 }
