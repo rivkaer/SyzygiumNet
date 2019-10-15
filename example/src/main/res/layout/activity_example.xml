@@ -5,15 +5,22 @@
     android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/reqGet"
+        android:id="@+id/btnReqGet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/string_net_request_method_get" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/reqPost"
+        android:id="@+id/btnReqPost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/string_net_request_method_post" />
+
+    <TextView
+        android:id="@+id/tvBodyContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/string_body_default"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

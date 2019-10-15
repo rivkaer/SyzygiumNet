@@ -20,6 +20,8 @@ public final class OKHttpManager {
 
     private OkHttpClient iClient;
 
+    private OKHttpManager(){}
+
     /**
      * OkHttpClient管理器
      * @return 管理器

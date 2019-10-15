@@ -20,7 +20,7 @@ public final class RetrofitManager {
     private Retrofit iRetrofit;
 
     private RetrofitManager() {
-        throw new UnsupportedOperationException("u can't instantiate me...");
+
     }
 
     /**
